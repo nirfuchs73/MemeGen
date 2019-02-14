@@ -60,3 +60,11 @@ function findNextId(images) {
     })
     return max + 1;
 }
+
+function getImageById(id) {
+    var image = gImages.find(function (image) {
+        return image.id === id;
+    });
+
+    return image;
+}
