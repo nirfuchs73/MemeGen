@@ -11,6 +11,7 @@
 </head>
 
 <body onload="init()">
+
     <header class="main-header ">
         <nav class=" main-nav wrapper flex space-between align-center">
             <a href="/" class="logo">meme generator</a>
@@ -22,17 +23,18 @@
         </nav>
         </div>
     </header>
-    <main class="wrapper">
+
+    <main class="gallery-main wrapper">
         <div class="choose-meme">Choose your image</div>
         <div class="first-filter">
 
-        <select name="key-words" id="key-words">
-            <option value="">--You can fillter the list--</option>
-            <option value="key-1">XXX</option>
-            <option value="key-2">XXX</option>
-            <option value="key-3">XXx</option>
-        </select>
-    </div>
+            <select name="key-words" id="key-words">
+                <option value="">--You can fillter the list--</option>
+                <option value="key-1">XXX</option>
+                <option value="key-2">XXX</option>
+                <option value="key-3">XXx</option>
+            </select>
+        </div>
         <div class="scnd-filter flex">
             <p> you can fillter by our mostly popular memes </p>
             <ul class="flex clean-list">
@@ -47,12 +49,9 @@
 
         </div>
     </main>
-    <footer class="wrapper">
 
-
-    </footer>
-<body onload="initCanvas(2)">
-    <div class="canvas-main-container flex">
+    <!-- <body onload="initCanvas(2)"> -->
+    <div class="canvas-main-container flex hide">
         <div class="canvas-menu flex">
             <div>
                 <!-- <label for="color" class="label">Select color:</label> -->
@@ -70,6 +69,9 @@
             <div class="canvas-about">
                 <button onclick="onAbout()">About</button>
             </div>
+            <div class="canvas-gallery">
+                <button onclick="onBacktoGallery()">Back to Gallery</button>
+            </div>
         </div>
         <div class="canvas">
             <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
@@ -82,7 +84,8 @@
         </div>
     </div>
 
-
+    <footer class="wrapper">
+    </footer>
 
     <script src="js/util.js"></script>
     <script src="js/storage-service.js"></script>
