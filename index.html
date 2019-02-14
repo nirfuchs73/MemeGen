@@ -19,7 +19,9 @@
             </div>
             <div class="canvas-text">
                 <input type="text" id="first-line" name="fname" placeholder="First line on text"
-                    onkeyup="onTextChanged(this)">
+                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
+                <input type="text" id="second-line" name="fname" placeholder="Second line on text"
+                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
             </div>
             <div class="canvas-clear">
                 <button onclick="onClear()">Clear</button>
