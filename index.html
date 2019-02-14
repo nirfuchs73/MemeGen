@@ -18,7 +18,8 @@
                 <input type="color" id="color" name="color" form="frmRegister" onchange="colorChanged()" />
             </div>
             <div class="canvas-text">
-                <input type="text" name="fname" placeholder="Type text here">
+                <input type="text" id="first-line" name="fname" placeholder="First line on text"
+                    onkeyup="onTextChanged(this)">
             </div>
             <div class="canvas-clear">
                 <button onclick="onClear()">Clear</button>
