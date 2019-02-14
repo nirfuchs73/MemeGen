@@ -8,22 +8,22 @@ function createImages() {
     if (!images || images.length === 0) {
         images = [
             createImage('meme-imgs/Oprah-You-Get-A.jpg', ['happy']),
-            createImage('meme-imgs/004.jpg', ['happy']),
+            createImage('meme-imgs/004.jpg', ['dogs']),
             createImage('meme-imgs/005.jpg', ['happy']),
-            createImage('meme-imgs/006.jpg', ['happy']),
-            createImage('meme-imgs/putin.jpgg', ['happy']),
+            createImage('meme-imgs/006.jpg', ['kats']),
+            createImage('meme-imgs/putin.jpg', ['scary']),
             createImage('meme-imgs/patrick.jpg', ['happy']),
             createImage('meme-imgs/drevil.jpg', ['happy']),
             createImage('meme-imgs/leo.jpg', ['happy']),
             createImage('meme-imgs/img12.jpg', ['happy']),
             createImage('meme-imgs/img11.jpg', ['happy']),
-            createImage('meme-imgs/img6.jpg.jpg', ['happy']),
+            createImage('meme-imgs/img6.jpg', ['funny']),
             createImage('meme-imgs/img5.jpg', ['happy']),
             createImage('meme-imgs/img4.jpg', ['happy']),
             createImage('meme-imgs/img2.jpg', ['happy']),
-            createImage('meme-imgs/meme1.jpg', ['happy']),
+            createImage('meme-imgs/meme1.jpg', ['scary']),
             createImage('meme-imgs/19.jpg', ['happy']),
-            createImage('meme-imgs/003.jpgg', ['happy']),
+            createImage('meme-imgs/003.jpg', ['happy']),
             createImage('meme-imgs/12.jpg', ['happy']),
             createImage('meme-imgs/9.jpg', ['happy']),
             createImage('meme-imgs/8.jpg', ['happy']),
@@ -43,6 +43,7 @@ function createImages() {
 
 function getImagesForDisplay() {
     return gImages;
+    
 }
 
 function createImage(url, keywords) {
