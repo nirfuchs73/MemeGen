@@ -2,6 +2,33 @@
 var gNextId = 1;
 var gImages;
 const IMAGES_KEY = 'images';
+var gMeme;
+
+function createMeme(selectedImgId) {
+    gMeme = {
+        selectedImgId: selectedImgId,
+        firstLine: {
+            line: '',
+            x: 50,
+            y: 50,
+            size: 50,
+            color: '#000000',
+            isActive: true
+        },
+        secondLine: {
+            line: '',
+            x: 50,
+            y: 450,
+            size: 50,
+            color: '#000000',
+            isActive: false
+        }
+    };
+}
+
+function getMeme() {
+    return gMeme;
+}
 
 function createImages() {
     var images = loadFromStorage(IMAGES_KEY);
@@ -51,7 +78,7 @@ function createImage(url, keywords) {
         id: gNextId++,
         url: url,
         keywords: keywords
-    }
+    };
 }
 
 function findNextId(images) {
@@ -60,4 +87,12 @@ function findNextId(images) {
         if (image.id > max) max = image.id;
     })
     return max + 1;
+}
+
+function getImageById(id) {
+    var image = gImages.find(function (image) {
+        return image.id === id;
+    });
+
+    return image;
 }

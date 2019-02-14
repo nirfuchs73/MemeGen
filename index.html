@@ -51,6 +51,37 @@
 
 
     </footer>
+<body onload="initCanvas(2)">
+    <div class="canvas-main-container flex">
+        <div class="canvas-menu flex">
+            <div>
+                <!-- <label for="color" class="label">Select color:</label> -->
+                <input type="color" id="color" name="color" form="frmRegister" onchange="colorChanged()" />
+            </div>
+            <div class="canvas-text">
+                <input type="text" id="first-line" name="fname" placeholder="First line on text"
+                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
+                <input type="text" id="second-line" name="fname" placeholder="Second line on text"
+                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
+            </div>
+            <div class="canvas-clear">
+                <button onclick="onClear()">Clear</button>
+            </div>
+            <div class="canvas-about">
+                <button onclick="onAbout()">About</button>
+            </div>
+        </div>
+        <div class="canvas">
+            <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
+            <canvas id="my-canvas" width="800" height="500">
+                Update your browser to enjoy canvas!
+            </canvas>
+        </div>
+        <div class="canvas-save">
+            <a href="" type="button" onclick="downloadCanvas(this)">Download</a>
+        </div>
+    </div>
+
 
 
     <script src="js/util.js"></script>
