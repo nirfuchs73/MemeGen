@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MemeGen</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -52,44 +54,61 @@
 
     <!-- <body onload="initCanvas(2)"> -->
     <div class="canvas-main-container flex hide">
-        <div class="canvas-menu flex">
-            <div>
-                <!-- <label for="color" class="label">Select color:</label> -->
-                <input type="color" id="color" name="color" form="frmRegister" onchange="colorChanged()" />
-            </div>
-            <div class="canvas-text">
-                <input type="text" id="first-line" name="fname" placeholder="First line on text"
-                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
-                <input type="text" id="second-line" name="fname" placeholder="Second line on text"
-                    onkeyup="onTextChanged(this)" onfocus="onTextFocus(this)">
-            </div>
-            <div class="canvas-clear">
-                <button onclick="onClear()">Clear</button>
-            </div>
-            <div class="canvas-about">
-                <button onclick="onAbout()">About</button>
-            </div>
-            <div class="canvas-gallery">
-                <button onclick="onBacktoGallery()">Back to Gallery</button>
-            </div>
+        <!-- <div class="canvas-menu flex"> -->
+        <div class="canvas-gallery">
+            <button onclick="onBacktoGallery()">Back to Gallery</button>
         </div>
         <div class="canvas">
             <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
-            <canvas id="my-canvas" width="800" height="500">
+            <canvas id="my-canvas" width="800" height="500" onclick="canvasClicked(event)">
                 Update your browser to enjoy canvas!
             </canvas>
         </div>
-        <div class="canvas-save">
-            <a href="" type="button" onclick="downloadCanvas(this)">Download</a>
+        <div class="canvas-text">
+            <input type="text" id="text-area" name="fname" placeholder="Type text here" onkeyup="onTextChanged(this)"
+                onfocus="onTextFocus(this)">
         </div>
+        <div class="control-box flex">
+            <!-- <label for="color" class="label">Select color:</label> -->
+            <input class="canvas-color" type="color" id="color" name="color" form="frmRegister"
+                onchange="colorChanged()" />
+            <select class="canvas-font" onchange="onFontChanged()">
+                <option value="impact">Impact</option>
+                <option value="ariel">Ariel</option>
+            </select>
+            <select class="canvas-size" onchange="onSizeChanged()">
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60" selected="selected">60</option>
+            </select>
+            <button class="canvas-move-up" onclick="onMoveUp()">↑</button>
+            <button class="canvas-move-down" onclick="onMoveDown()">↓</button>
+            <button class="canvas-move-left" onclick="onMoveLeft()">←</button>
+            <button class="canvas-move-right" onclick="onMoveRight()">→</button>
+            <button class="canvas-add-text" onclick="onAddText()">+</button>
+            <button class="canvas-delete-text" onclick="onDeleteText()">-</button>
+            <button class="canvas-clear onclick=" onClear()">Clear</button>
+            <a class="canvas-download" href="" type=" button" onclick="downloadCanvas(this)">Download</a>
+        </div>
+
+        <!-- <div class="canvas-about">
+            <button onclick="onAbout()">About</button>
+        </div> -->
+
+        <!-- </div> -->
+
     </div>
 
     <footer class="wrapper">
     </footer>
 
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/bootstrap.js"></script>
     <script src="js/util.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/memes-service.js"></script>
+    <script src="js/canvas-main.js"></script>
     <script src="js/memes-main.js"></script>
 </body>
 

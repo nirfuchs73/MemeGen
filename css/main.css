@@ -76,16 +76,3 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
-
-canvas {
-    border: 1px solid green;
-}
-
-.canvas-main-container {
-    flex-direction: column;
-    align-items: center;
-}
-
-.canvas-menu {
-    flex-direction: row;
-}

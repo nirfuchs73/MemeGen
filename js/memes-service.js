@@ -7,23 +7,67 @@ var gMeme;
 function createMeme(selectedImgId) {
     gMeme = {
         selectedImgId: selectedImgId,
-        firstLine: {
-            line: '',
-            x: 50,
-            y: 50,
-            size: 50,
-            color: '#000000',
-            isActive: true
-        },
-        secondLine: {
-            line: '',
-            x: 50,
-            y: 450,
-            size: 50,
-            color: '#000000',
-            isActive: false
-        }
+        txts: [
+            {
+                type: 'top',
+                line: '',
+                x: 50,
+                y: 70,
+                size: 60,
+                align: 'left',
+                color: '#FFFFFF',
+                font: 'impact'
+            },
+            {
+                type: 'bottom',
+                line: '',
+                x: 50,
+                y: 450,
+                size: 60,
+                align: 'left',
+                color: '#FFFFFF',
+                font: 'impact'
+            },
+            {
+                type: 'center',
+                line: '',
+                x: 50,
+                y: 250,
+                size: 60,
+                align: 'left',
+                color: '#FFFFFF',
+                font: 'impact'
+            }
+        ]
+        // firstLine: {
+        //     line: '',
+        //     x: 50,
+        //     y: 50,
+        //     size: 50,
+        //     color: '#000000',
+        //     isActive: true
+        // },
+        // secondLine: {
+        //     line: '',
+        //     x: 50,
+        //     y: 450,
+        //     size: 50,
+        //     color: '#000000',
+        //     isActive: false
     };
+}
+
+function createText(type, x, y, size, align) {
+    var txt = {
+        type: type,
+        line: '',
+        x: x,
+        y: y,
+        size: size,
+        align: align,
+        color: '#000000'
+    }
+    return txt;
 }
 
 function getMeme() {
@@ -70,7 +114,7 @@ function createImages() {
 
 function getImagesForDisplay() {
     return gImages;
-    
+
 }
 
 function createImage(url, keywords) {
