@@ -52,29 +52,27 @@
         </div>
     </main>
 
-    <!-- <body onload="initCanvas(2)"> -->
     <div class="canvas-main-container flex hide">
-        <!-- <div class="canvas-menu flex"> -->
-        <div class="canvas-gallery">
-            <button onclick="onBacktoGallery()">Back to Gallery</button>
-        </div>
-        <div class="canvas">
-            <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
-            <canvas id="my-canvas" width="800" height="500" onclick="canvasClicked(event)">
-                Update your browser to enjoy canvas!
-            </canvas>
-        </div>
-        <div class="canvas-text">
-            <input type="text" id="text-area" name="fname" placeholder="Type text here" onkeyup="onTextChanged(this)"
-                onfocus="onTextFocus(this)">
-        </div>
+        <button class="canvas-gallery" onclick="onBacktoGallery()">Back to Gallery</button>
+        <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
+        <canvas class="canvas" id="my-canvas" onclick="canvasClicked(event)">
+            Update your browser to enjoy canvas!
+        </canvas>
+
+        <input class="canvas-text" type="text" id="text-area" name="fname" placeholder="Type text here"
+            onkeyup="onTextChanged(this)">
+
         <div class="control-box flex">
             <!-- <label for="color" class="label">Select color:</label> -->
             <input class="canvas-color" type="color" id="color" name="color" form="frmRegister"
                 onchange="colorChanged()" />
             <select class="canvas-font" onchange="onFontChanged()">
-                <option value="impact">Impact</option>
-                <option value="ariel">Ariel</option>
+                <option value="Impact" selected="selected">Impact</option>
+                <option value="Ariel">Ariel</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
             </select>
             <select class="canvas-size" onchange="onSizeChanged()">
                 <option value="30">30</option>
@@ -88,7 +86,7 @@
             <button class="canvas-move-right" onclick="onMoveRight()">→</button>
             <button class="canvas-add-text" onclick="onAddText()">+</button>
             <button class="canvas-delete-text" onclick="onDeleteText()">-</button>
-            <button class="canvas-clear onclick=" onClear()">Clear</button>
+            <button class="canvas-clear" onclick="onClear()">Clear</button>
             <a class="canvas-download" href="" type=" button" onclick="downloadCanvas(this)">Download</a>
         </div>
 

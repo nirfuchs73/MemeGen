@@ -3,6 +3,9 @@ var gNextId = 1;
 var gImages;
 const IMAGES_KEY = 'images';
 var gMeme;
+var WHITE = '#FFFFFF';
+var YELLOW = '#FFFF00';
+var BLACK = '#000000'
 
 function createMeme(selectedImgId) {
     gMeme = {
@@ -11,64 +14,49 @@ function createMeme(selectedImgId) {
             {
                 type: 'top',
                 line: '',
-                x: 50,
+                x: 20,
                 y: 70,
                 size: 60,
                 align: 'left',
-                color: '#FFFFFF',
-                font: 'impact'
+                color: WHITE,
+                font: 'Impact'
             },
             {
                 type: 'bottom',
                 line: '',
-                x: 50,
+                x: 20,
                 y: 450,
                 size: 60,
                 align: 'left',
-                color: '#FFFFFF',
-                font: 'impact'
+                color: WHITE,
+                font: 'Impact'
             },
             {
                 type: 'center',
                 line: '',
-                x: 50,
+                x: 20,
                 y: 250,
                 size: 60,
                 align: 'left',
-                color: '#FFFFFF',
-                font: 'impact'
+                color: WHITE,
+                font: 'Impact'
             }
         ]
-        // firstLine: {
-        //     line: '',
-        //     x: 50,
-        //     y: 50,
-        //     size: 50,
-        //     color: '#000000',
-        //     isActive: true
-        // },
-        // secondLine: {
-        //     line: '',
-        //     x: 50,
-        //     y: 450,
-        //     size: 50,
-        //     color: '#000000',
-        //     isActive: false
     };
 }
 
-function createText(type, x, y, size, align) {
-    var txt = {
-        type: type,
-        line: '',
-        x: x,
-        y: y,
-        size: size,
-        align: align,
-        color: '#000000'
-    }
-    return txt;
-}
+// function createText(type, x, y, size, align) {
+//     var txt = {
+//         type: type,
+//         line: '',
+//         x: x,
+//         y: y,
+//         size: size,
+//         align: align,
+//         color: WHITE
+//     }
+//     return txt;
+// }
 
 function getMeme() {
     return gMeme;

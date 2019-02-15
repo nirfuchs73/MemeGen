@@ -17,8 +17,8 @@ canvas {
     align-items: center;
 }
 
-.canvas-gallery button {
-    width: 800px;
+.canvas-gallery {
+    /* width: 700px; */
 }
 
 /* .canvas {
@@ -27,11 +27,12 @@ canvas {
 } */
 
 .canvas-text input {
-    width: 800px;
+    /* width: 700px; */
 }
 
 .control-box {
     flex-direction: row;
-    width: 800px;
+    /* flex: 1; */
+    /* width: 700px; */
     /* background-color: yellow; */
 }
