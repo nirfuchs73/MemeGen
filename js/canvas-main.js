@@ -186,21 +186,26 @@ function moveText(eventKeyboard) {
 }
 
 function onMoveUp() {
+    if (gCurrText.y < gCurrText.size -5) return;
     gCurrText.y -= 5;
     renderCanvas();
 }
 
 function onMoveDown() {
+    if (gCurrText.y > gCanvas.height - 5) return;
     gCurrText.y += 5;
     renderCanvas();
 }
 
 function onMoveLeft() {
+    if (gCurrText.x < 5) return;
     gCurrText.x -= 5;
     renderCanvas();
 }
 
 function onMoveRight() {
+    var textWidth = gCtx.measureText(gCurrText.line).width;
+    if (gCurrText.x + textWidth + 5 > gCanvas.width) return;
     gCurrText.x += 5;
     renderCanvas();
 }
