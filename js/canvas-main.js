@@ -59,7 +59,7 @@ function renderCanvas() {
         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, imgWidth, imgHeight);
 
         if (gFirstLoad) {
-            updateMemeHeights(gCanvas.height);
+            updateMemeHeights();
             document.getElementById('text-area').style.width = gCanvas.width + 'px';
             document.querySelector('.canvas-gallery').style.width = gCanvas.width + 'px';
             document.querySelector('.canvas-control-box').style.width = gCanvas.width + 'px';
@@ -110,14 +110,14 @@ function renderCanvas() {
 //     return lines;
 // }
 
-function updateMemeHeights(height) {
+function updateMemeHeights() {
     var meme = getMeme();
     meme.txts.map(function (txt) {
         if (txt.type === 'bottom') {
-            txt.y = height - 20;
+            txt.y = gCanvas.height - 20;
         }
         if (txt.type === 'center') {
-            txt.y = (height / 2) + (txt.size / 2);
+            txt.y = (gCanvas.height / 2) + (txt.size / 2);
         }
     });
 }

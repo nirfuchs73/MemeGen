@@ -59,64 +59,75 @@ canvas {
 
 .canvas-align-right {
     background: url('../icons/Align-right-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-align-center {
     background: url('../icons/Align-center-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-align-left {
     background: url('../icons/Align-left-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-move-up {
     background: url('../icons/Arrow-small-up-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-move-down {
     background: url('../icons/Arrow-small-down-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-move-right {
     background: url('../icons/Arrow-small-right-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-move-left {
     background: url('../icons/Arrow-small-left-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-add-text {
     background: url('../icons/Plus-01.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
 .canvas-delete-text {
     background: url('../icons/Remove-02.png') no-repeat left center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-size: 100%;
 }
 
+.canvas-font {
+    width: auto;
+}
+
+.canvas-size {
+    width: auto;
+}
+
+.canvas-color{
+    width: 50px;
+}
