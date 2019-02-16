@@ -27,27 +27,24 @@
     </header>
 
     <main class="gallery-main wrapper">
-        <div class="choose-meme">Choose your image</div>
-        <div class="first-filter">
-
-            <select name="key-words" id="key-words">
-                <option value="">--You can fillter the list--</option>
-                <option value="key-1">XXX</option>
-                <option value="key-2">XXX</option>
-                <option value="key-3">XXx</option>
-            </select>
-        </div>
-        <div class="scnd-filter flex">
-            <p> you can fillter by our mostly popular memes </p>
-            <ul class="flex clean-list">
-                <li><a href="#">sad</a></li>
-                <li><a href="#">happy</a></li>
-                <li><a href="#">bad</a></li>
-            </ul>
+        <div class="under-navbar flex">
+            <div class="choose-meme">Choose your image</div>
+            <div class="gallery-fillters flex ">
+                <div class="first-filter">
+                    <select name="key-words" id="key-words" onchange="onFilterChange(this.value)">
+                    </select>
+                </div>
+                <div class="scnd-filter flex align-center">
+                    <p> you can fillter by our mostly popular memes </p>
+                    <ul class="scnd-filter-list flex clean-list">
+                        <!-- <li value=" " onclick="onFilterChange(this.value)"> sad</li>
+                        <li><a href="#">happy</a></li>
+                        <li><a href="#">bad</a></li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="main-container grid-container" style="background-image: src=meme-imgs/2jpg">
-            <!-- <img src="/meme-imgs/2.jpg" class="gallery-img" alt=""> -->
-
 
         </div>
     </main>
