@@ -167,6 +167,24 @@ function resetFields() {
     document.querySelector('.canvas-size').value = 60;
 }
 
+function moveText(eventKeyboard) {
+    switch (eventKeyboard.code) {
+        case 'ArrowUp':
+            onMoveUp();
+            break;
+        case 'ArrowDown':
+            onMoveDown();
+            break;
+        case 'ArrowLeft':
+            onMoveLeft();
+            break;
+        case 'ArrowRight':
+            onMoveRight();
+            break;
+        default: return null;
+    }
+}
+
 function onMoveUp() {
     gCurrText.y -= 5;
     renderCanvas();
