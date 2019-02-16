@@ -46,14 +46,6 @@ function renderFirstFilter() {
     return keywords
 }
 
-function onBacktoGallery() {
-    var elGallery = document.querySelector('.gallery-main');
-    elGallery.classList.remove('hide');
-    var elCanvas = document.querySelector('.canvas-main-container');
-    elCanvas.classList.add('hide');
-    init();
-}
-
 function filtreDistinctKewords() {
     createImages();
     var allMemes = getImagesForDisplay();

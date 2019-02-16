@@ -50,16 +50,15 @@
     </main>
 
     <div class="canvas-main-container flex hide">
-        <button class="canvas-gallery" onclick="onBacktoGallery()">Back to Gallery</button>
+        <button class="canvas-gallery font-weight-bold" onclick="onBacktoGallery()">Back to Gallery</button>
         <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
         <canvas class="canvas" id="my-canvas" onclick="canvasClicked(event)">
-            Update your browser to enjoy canvas!
         </canvas>
 
         <input class="canvas-text" type="text" id="text-area" name="fname" placeholder="Type text here"
             onkeyup="onTextChanged(this)">
 
-        <div class="control-box flex">
+        <div class="canvas-control-box flex">
             <input class="canvas-color align-self-center" type="color" id="color" name="color" form="frmRegister"
                 onchange="colorChanged()" />
             <select class="canvas-font" onchange="onFontChanged()">
@@ -76,23 +75,20 @@
                 <option value="50">50</option>
                 <option value="60" selected="selected">60</option>
             </select>
-            <button class="canvas-move-up" onclick="onMoveUp()">↑</button>
-            <button class="canvas-move-down" onclick="onMoveDown()">↓</button>
-            <!-- <button class="canvas-move-left" onclick="onMoveLeft()">←</button> -->
-            <!-- <button class="canvas-move-right" onclick="onMoveRight()">→</button> -->
-            <button class="canvas-add-text" onclick="onAddText()">+</button>
-            <button class="canvas-delete-text" onclick="onDeleteText()">-</button>
-            <button class="canvas-clear" onclick="onClear()">Clear</button>
-            <a class="canvas-download align-self-center" href="" type=" button"
-                onclick="downloadCanvas(this)">Download</a>
+            <button class="canvas-add-text" onclick="onAddText()"></button>
+            <button class="canvas-delete-text" onclick="onDeleteText()"></button>
+            <button class="canvas-clear font-weight-bold" onclick="onClear()">Clear All</button>
         </div>
-
-        <!-- <div class="canvas-about">
-            <button onclick="onAbout()">About</button>
-        </div> -->
-
-        <!-- </div> -->
-
+        <div class="canvas-control-text flex">
+            <button class="canvas-move-up" onclick="onMoveUp()"></button>
+            <button class="canvas-move-down" onclick="onMoveDown()"></button>
+            <button class="canvas-move-left" onclick="onMoveLeft()"></button>
+            <button class="canvas-move-right" onclick="onMoveRight()"></button>
+            <button class="canvas-align-left" onclick="onAlignLeft()"></button>
+            <button class="canvas-align-center" onclick="onAlignCenter()"></button>
+            <button class="canvas-align-right" onclick="onAlignRight()"></button>
+            <a class="canvas-download font-weight-bold" href="" type=" button" onclick="downloadCanvas(this)">Download</a>
+        </div>
     </div>
 
     <footer class="wrapper">

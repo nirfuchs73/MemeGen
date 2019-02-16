@@ -24,7 +24,6 @@ function initCanvas(id) {
 function onBacktoGallery() {
     var elGallery = document.querySelector('.gallery-main');
     elGallery.classList.remove('hide');
-
     var elCanvas = document.querySelector('.canvas-main-container');
     elCanvas.classList.add('hide');
     init();
@@ -63,7 +62,9 @@ function renderCanvas() {
             updateMemeHeights(gCanvas.height);
             document.getElementById('text-area').style.width = gCanvas.width + 'px';
             document.querySelector('.canvas-gallery').style.width = gCanvas.width + 'px';
-            document.querySelector('.control-box').style.width = gCanvas.width + 'px';
+            document.querySelector('.canvas-control-box').style.width = gCanvas.width + 'px';
+            document.querySelector('.canvas-control-text').style.width = gCanvas.width + 'px';
+            // document.querySelector('.canvas-download').style.width = gCanvas.width + 'px';
             gFirstLoad = false;
         }
 
@@ -76,7 +77,7 @@ function renderCanvas() {
             gCtx.font = txt.size + 'px ' + txt.font;
             gCtx.lineWidth = txt.size / 10;
             gCtx.fillStyle = txt.color;
-            txt.x = gCanvas.width / 2 - gCtx.measureText(txt.line).width / 2;
+            // txt.x = gCanvas.width / 2 - gCtx.measureText(txt.line).width / 2;
             gCtx.strokeText(txt.line, txt.x, txt.y);
             gCtx.fillText(txt.line, txt.x, txt.y);
             // var lines = getLines(txt.line, gCanvas.width);
@@ -124,7 +125,7 @@ function updateMemeHeights(height) {
 function onTextChanged(elText) {
     if (gCurrText === null) return;
     var textWidth = gCtx.measureText(elText.value).width;
-    if (textWidth > gCanvas.width) return;
+    if (gCurrText.x + textWidth + 20 > gCanvas.width) return;
     gCurrText.line = elText.value;
     renderCanvas();
 }
@@ -183,6 +184,21 @@ function onMoveLeft() {
 
 function onMoveRight() {
     gCurrText.x += 5;
+    renderCanvas();
+}
+
+function onAlignLeft() {
+    gCurrText.x = 20;
+    renderCanvas();
+}
+
+function onAlignCenter() {
+    gCurrText.x = gCanvas.width / 2 - gCtx.measureText(gCurrText.line).width / 2;
+    renderCanvas();
+}
+
+function onAlignRight() {
+    gCurrText.x = gCanvas.width - gCtx.measureText(gCurrText.line).width - 20;
     renderCanvas();
 }
 
