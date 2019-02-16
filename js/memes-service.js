@@ -3,6 +3,8 @@ var gNextId = 1;
 var gImages;
 const IMAGES_KEY = 'images';
 var gMeme;
+var gMemesFilterBy = 'All';
+var gSerchCounter = {'happy':3,'dogs':2, 'cats':1};
 
 function createMeme(selectedImgId) {
     gMeme = {
@@ -37,7 +39,7 @@ function createImages() {
             createImage('meme-imgs/Oprah-You-Get-A.jpg', ['happy']),
             createImage('meme-imgs/004.jpg', ['dogs']),
             createImage('meme-imgs/005.jpg', ['happy']),
-            createImage('meme-imgs/006.jpg', ['kats']),
+            createImage('meme-imgs/006.jpg', ['cats']),
             createImage('meme-imgs/putin.jpg', ['scary']),
             createImage('meme-imgs/patrick.jpg', ['happy']),
             createImage('meme-imgs/drevil.jpg', ['happy']),
@@ -46,7 +48,7 @@ function createImages() {
             createImage('meme-imgs/img11.jpg', ['happy']),
             createImage('meme-imgs/img6.jpg', ['funny']),
             createImage('meme-imgs/img5.jpg', ['happy']),
-            createImage('meme-imgs/img4.jpg', ['happy']),
+            createImage('meme-imgs/img4.jpg', ['happy','funny']),
             createImage('meme-imgs/img2.jpg', ['happy']),
             createImage('meme-imgs/meme1.jpg', ['scary']),
             createImage('meme-imgs/19.jpg', ['happy']),
@@ -63,15 +65,24 @@ function createImages() {
     } else {
         gNextId = findNextId(images);
     }
-
     gImages = images;
     saveToStorage(IMAGES_KEY, gImages);
 }
 
+// function createDefualtSearchCounter(){
+// var counter={'happy':3,'dogs':2, 'cats':1}
+// var gSerchCounter = counter;
+// }
+
+
+
 function getImagesForDisplay() {
-    return gImages;
-    
+    if (gMemesFilterBy === 'All') return gImages;
+    return gImages.filter(function (meme) {
+        if (meme.keywords.find(function (word) { return word === gMemesFilterBy })) return meme;
+    })
 }
+
 
 function createImage(url, keywords) {
     return {
@@ -81,6 +92,7 @@ function createImage(url, keywords) {
     };
 }
 
+
 function findNextId(images) {
     var max = 0;
     images.forEach(function (image) {
@@ -89,10 +101,23 @@ function findNextId(images) {
     return max + 1;
 }
 
+
 function getImageById(id) {
     var image = gImages.find(function (image) {
         return image.id === id;
     });
-
     return image;
+}
+
+function setMemesFilter(filterByKeyWord) {
+    gMemesFilterBy = filterByKeyWord;
+}
+
+function updateSearchCounter(keyWord) {
+    var count = gSerchCounter[keyWord];
+    gSerchCounter[keyWord] = (count) ? count + 1 : 1;
+    }
+    
+function getSerchCounter() {
+    return gSerchCounter;
 }
