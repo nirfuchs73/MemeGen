@@ -23,6 +23,11 @@
 .flex.wrap {
     flex-wrap: wrap;
 }
+
 .hide {
     display: none;
+}
+
+.align-self-center {
+    align-self: center;
 }

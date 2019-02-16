@@ -63,8 +63,7 @@
             onkeyup="onTextChanged(this)">
 
         <div class="control-box flex">
-            <!-- <label for="color" class="label">Select color:</label> -->
-            <input class="canvas-color" type="color" id="color" name="color" form="frmRegister"
+            <input class="canvas-color align-self-center" type="color" id="color" name="color" form="frmRegister"
                 onchange="colorChanged()" />
             <select class="canvas-font" onchange="onFontChanged()">
                 <option value="Impact" selected="selected">Impact</option>
@@ -82,12 +81,13 @@
             </select>
             <button class="canvas-move-up" onclick="onMoveUp()">↑</button>
             <button class="canvas-move-down" onclick="onMoveDown()">↓</button>
-            <button class="canvas-move-left" onclick="onMoveLeft()">←</button>
-            <button class="canvas-move-right" onclick="onMoveRight()">→</button>
+            <!-- <button class="canvas-move-left" onclick="onMoveLeft()">←</button> -->
+            <!-- <button class="canvas-move-right" onclick="onMoveRight()">→</button> -->
             <button class="canvas-add-text" onclick="onAddText()">+</button>
             <button class="canvas-delete-text" onclick="onDeleteText()">-</button>
             <button class="canvas-clear" onclick="onClear()">Clear</button>
-            <a class="canvas-download" href="" type=" button" onclick="downloadCanvas(this)">Download</a>
+            <a class="canvas-download align-self-center" href="" type=" button"
+                onclick="downloadCanvas(this)">Download</a>
         </div>
 
         <!-- <div class="canvas-about">
