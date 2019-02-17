@@ -109,6 +109,7 @@ function findTopSearches(param) {
 
 function renderSecndFilter() {
   var mostlySerched = findTopSearches(3);
+  console.log(mostlySerched);
   var baseSize = 60; //base size font param that can be changed 
   var arrOfValues = Object.values(mostlySerched);
   var total = arrOfValues.reduce(function (acc, val) { return acc + val }, 0);
@@ -117,7 +118,7 @@ function renderSecndFilter() {
     var fontSize = mostlySerched[key] / total;
     return `<li class="flex align-center" value="${key}" style="font-size:${baseSize * fontSize}px" onclick="onFilterChange('${key}')">${key} </li>`
   });
-  console.log('inner', strHtmls.join(''))
+  //console.log('inner', strHtmls.join(''))
   var scndFiltContainer = document.querySelector('.scnd-filter-list');
   scndFiltContainer.innerHTML = strHtmls.join('');
 }
@@ -128,9 +129,13 @@ function toggleMenu() {
 }
  
 function openForm(){
-  // document.querySelector('.offcanvas-btn').classList.toggle('offcanvas-btn-open');
-  document.querySelector('.contact-us').classList.toggle('contact-us-open');    
+    document.querySelector('.contact-us').classList.toggle('contact-us-open');    
 }
+
+function openAbout(){
+    document.querySelector('.about').classList.toggle('about-open');    
+}
+
 
 
 function onSbmitMessage(ev){
