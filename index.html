@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -10,41 +10,56 @@
     <link rel="stylesheet" href="css/helpers.css">
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/main.css">
+   
 </head>
 
 <body onload="init()">
-
+    <div class="screen" onclick="toggleMenu()"></div>
     <header class="main-header ">
         <nav class=" main-nav wrapper flex space-between align-center">
-            <a href="/" class="logo">meme generator</a>
+            <a href="/" class="logo flex align-center text-decoration-none  ">meme generator</a>
             <ul class="flex clean-list nav-list">
+                <li><a  onclick="onBacktoGallery()"href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">yyyyXXX</a></li>
-                <li><a href="#">GGGG</a></li>
+                <li><a onClick="openForm()"href="#">Contact Us</a></li>
             </ul>
+            <button id="mobile-menu-button" class="mobile-menu-button" onclick="toggleMenu()">☰</button>
         </nav>
-        </div>
-    </header>
+          </header>
+    <div class="contact-us">
+        <form>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Your E-mail</label>
+              <input type="text" class="form-control email" id="formGroupExampleInput" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Subject</label>
+              <input type="text" class="form-control subject" id="formGroupExampleInput2" placeholder="Type subject here">
+            </div>
+              <div class="form-group">
+                  <label for="formGroupExampleInput2">Message body</label>
+                  <textarea rows="4" type="text" class="form-control message" id="formGroupExampleInput2" placeholder="Type message text here"></textarea>
+              </div>
+                      <button type="submit" class="btn btn-primary" onclick="onSbmitMessage(event)"  >Submit</button>
+          </form>
+    </div>
 
     <main class="gallery-main wrapper">
         <div class="under-navbar flex">
             <div class="choose-meme">Choose your image</div>
             <div class="gallery-fillters flex ">
-                <div class="first-filter">
+                <div class="first-filter flex align-center">
                     <select name="key-words" id="key-words" onchange="onFilterChange(this.value)">
                     </select>
                 </div>
                 <div class="scnd-filter flex align-center">
-                    <p> you can fillter by our mostly popular memes </p>
+                    <p class="flex align-center">fillter by most popular tags</p>
                     <ul class="scnd-filter-list flex clean-list">
-                        <!-- <li value=" " onclick="onFilterChange(this.value)"> sad</li>
-                        <li><a href="#">happy</a></li>
-                        <li><a href="#">bad</a></li> -->
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="main-container grid-container" style="background-image: src=meme-imgs/2jpg">
+        <div class="main-container grid-container" >
 
         </div>
     </main>
@@ -95,7 +110,8 @@
 
     </div>
 
-    <footer class="wrapper">
+    <footer class="footer">
+        <div>Copyright © 2019 Second Sprint Limited. All Rights Reserved</div>
     </footer>
 
     <script src="lib/jquery/jquery.js"></script>
@@ -105,6 +121,6 @@
     <script src="js/memes-service.js"></script>
     <script src="js/canvas-main.js"></script>
     <script src="js/memes-main.js"></script>
-</body>
+   </body>
 
 </html>
