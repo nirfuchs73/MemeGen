@@ -44,7 +44,7 @@ function renderFirstFilter() {
 
 function filtreDistinctKewords() {
   createImages();
-  var allMemes = getImagesForDisplay();
+  var allMemes = allImages();
   var memeKywords = allMemes.map(meme => meme.keywords);
   var result = flatten(memeKywords)
   var filteredArray = result.filter(function (item, pos) {
@@ -63,13 +63,27 @@ function flatten(result) {
   return res;
 }
 
-function renderFirstFillter() {
-  var keyWords = filtreDistinctKewords();
-  var strHtml = keyWords.map(function (word) {
-    return `<option value="${word}">${word}</option>`
-  })
-  var strHtmls = `<option value = "All" > Gallery fillter</option>` +
-    strHtml.join('');
+function renderFirstFillter(diff = 'All') {
+   var keyWords = filtreDistinctKewords();
+    if (diff !== 'All') {
+    var strHtml = keyWords.map(function (word) {
+      if (word === diff) {
+        return `<option value="${word}"selected>${word}</option>`
+      }
+      else {
+        return `<option value="${word}">${word}</option>`
+      }
+    })
+    var strHtmls = `<option value = "All" > Gallery fillter</option>` +
+      strHtml.join('');
+  }
+  else {
+    var strHtml = keyWords.map(function (word) {
+      return `<option value="${word}">${word}</option>`
+    })
+    var strHtmls = `<option value = "All" selected> Gallery fillter</option>` +
+      strHtml.join('');
+  }
   var container = document.getElementById('key-words');
   container.innerHTML = strHtmls
 }
@@ -80,6 +94,7 @@ function onFilterChange(filterByKeyWord) {
   updateSearchCounter(filterByKeyWord);
   renderGallery();
   renderSecndFilter();
+  renderFirstFillter(filterByKeyWord);
 }
 
 

@@ -103,6 +103,10 @@ function getImagesForDisplay() {
     })
 }
 
+function allImages(){
+    return gImages;
+}
+
 
 function createImage(url, keywords) {
     return {

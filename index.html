@@ -21,8 +21,8 @@
                 generator</a>
             <ul class="flex clean-list nav-list">
                 <li><a href="#" onclick="onBacktoGallery()">Home</a></li>
-                <li><a onClick="openAbout()"href="#">About</a></li>
-                <li><a onClick=" openForm()"href="#">Contact Us</a></li>
+                <li><a onClick="openAbout()" href="#">About</a></li>
+                <li><a onClick=" openForm()" href="#">Contact Us</a></li>
             </ul>
             <button id="mobile-menu-button" class="mobile-menu-button" onclick="openMenu()">☰</button>
         </nav>
@@ -55,7 +55,7 @@
             <div class="choose-meme">Choose your image</div>
             <div class="gallery-fillters flex ">
                 <div class="first-filter flex align-center">
-                    <select name="key-words" id="key-words" onclick="onFilterChange(this.value)">
+                    <select name="key-words" id="key-words" onchange="onFilterChange(this.value)">
                     </select>
                 </div>
                 <div class="scnd-filter flex align-center">
@@ -114,7 +114,7 @@
                 onclick="downloadCanvas(this)">Download</a>
         </div>
     </div>
-</div>
+    </div>
     <footer class="footer">
         Copyright © 2019 Second Sprint Limited. All Rights Reserved
     </footer>
