@@ -48,19 +48,6 @@ function createMeme(selectedImgId) {
     };
 }
 
-// function createText(type, x, y, size, align) {
-//     var txt = {
-//         type: type,
-//         line: '',
-//         x: x,
-//         y: y,
-//         size: size,
-//         align: align,
-//         color: WHITE
-//     }
-//     return txt;
-// }
-
 function getMeme() {
     return gMeme;
 }

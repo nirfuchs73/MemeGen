@@ -17,6 +17,7 @@ canvas {
 .canvas-main-controller {
     /* max-width: 500px; */
     width: 350px;
+    margin-left: 10px;
     /* flex: 1; */
 }
 
@@ -53,10 +54,6 @@ canvas {
     /* text-align: center; */
     width: 100%;
     background-color: lightgrey;
-}
-
-.canvas-clear {
-    flex: 1;
 }
 
 .canvas-download {
@@ -150,16 +147,26 @@ canvas {
     flex: 1;
 }
 
-.canvas-clear {
-    /* background: url('../icons/Remove-02.png') no-repeat left center; */
+.canvas-wrapper {
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* .canvas-clear {
+    background: url('../icons/delete-512.png') no-repeat left center;
     width: 60px;
     height: 40px;
     background-size: 100%;
     flex: 1;
-}
+} */
 
 @media (max-width: 450px) {
     .canvas-main-container {
         flex-direction: column;
+    }
+    .canvas-main-controller {
+        margin-left: 0px;
+        margin-top: 10px;
     }
 }
