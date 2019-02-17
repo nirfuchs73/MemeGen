@@ -99,7 +99,7 @@ function findTopSearches(param) {
     maxprev = max;
     topSerches[value] = max;
   }
-  console.log(topSerches)
+  // console.log(topSerches)
   return (topSerches);
 }
 
