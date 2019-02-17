@@ -21,9 +21,9 @@
             <ul class="flex clean-list nav-list">
                 <li><a href="#" onclick="onBacktoGallery()">Home</a></li>
                 <li><a onClick="openAbout()"href="#">About</a></li>
-                <li><a onClick="openForm()"href="#">Contact Us</a></li>
+                <li><a onClick=" openForm()"href="#">Contact Us</a></li>
             </ul>
-            <button id="mobile-menu-button" class="mobile-menu-button" onclick="toggleMenu()">☰</button>
+            <button id="mobile-menu-button" class="mobile-menu-button" onclick="openMenu()">☰</button>
         </nav>
     </header>
     <div class="contact-us">
@@ -68,12 +68,12 @@
     </main>
 
     <div class="canvas-main-container flex hide">
-        <button class="canvas-gallery font-weight-bold btn btn-primary" onclick="onBacktoGallery()">Back to
-            Gallery</button>
+        <!-- <button class="canvas-gallery font-weight-bold btn btn-primary" onclick="onBacktoGallery()">Back to
+            Gallery</button> -->
         <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
         <canvas class="canvas" id="my-canvas" width="100%" height="100%" onclick="canvasClicked(event)">
         </canvas>
-
+<div class="canvas-main-controler">
         <input class="canvas-text form-control" type="text" id="text-area" name="fname" placeholder="Type text here"
             onkeyup="onTextChanged(this)">
 
@@ -110,7 +110,7 @@
                 onclick="downloadCanvas(this)">Download</a>
         </div>
     </div>
-
+</div>
     <footer class="footer">
         Copyright © 2019 Second Sprint Limited. All Rights Reserved
     </footer>

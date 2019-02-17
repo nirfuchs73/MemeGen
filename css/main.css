@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-    position: relative;
+   
     max-width: 1100px;
     padding: 0 20px;
     margin: 0 auto;
@@ -162,7 +162,8 @@ a {
         position: fixed;
         height: 100%;
         z-index: 3;
-        background: lightslategray;
+        background: #00293c;
+        color: white;
         width: 30vw;
         top: -150vw;
         left:65vw;
@@ -174,15 +175,15 @@ a {
         justify-content: space-around;
     }
 
-    .contact-us-open {
+   .contact-us-open{
         top:100px;
     }
 
     .about{
         position: fixed;
-       
         z-index: 3;
-        background: lightslategray;
+        background: #00293c;
+        color: white;
         width: 30vw;
         top: -150vw;
         left:65vw;
@@ -196,6 +197,25 @@ a {
 
     .about-open {
         top:100px;
+    }
+
+    .screen {
+        position:fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #000;
+        background: rgba(0, 0, 0, 0.35);
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity .3s;
+    }
+    
+    body.open .screen {
+        visibility: visible;
+        opacity: 1;
     }
     
 
@@ -217,13 +237,17 @@ a {
         right: 0; 
         top: 80px; 
         flex-direction: column;
-        background-color: grey;
+        background-color: #00293c;
         opacity: 0.75;
         height: auto;
         /* width: 40vw ; */
         border-left: 1px solid rgba(0, 0, 0, 0.2);
         transform: translate(100%, 0);
         transition: transform .3s;
+    }
+
+     .nav-list-open{   
+        transform: translate(0, 0);
     }
 
     .nav-list a {
@@ -233,12 +257,10 @@ a {
         justify-content: center;
         align-items: center;
     }
+          
+
     .choose-meme{
         font-size: 1.5rem;
-    }
-    
-    body.open .nav-list{   
-        transform: translate(0, 0);
     }
     #key-words{
         width: 100%;}
@@ -248,32 +270,21 @@ a {
         top: 0;
         width: 70vw;
     }
-    .contact-us-open{
+     .contact-us-open{
         left:0;
+    }
+
+    .about-open {
+        left:0;
+        top:80px;
+        width: 45vw;
     }
 
     .scnd-filter{
         padding-top:10px;
         flex-direction:column ;
     }
-    .screen {
-        position:fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #000;
-        background: rgba(0, 0, 0, 0.35);
-        visibility: hidden;
-        opacity: 0;
-        cursor: pointer;
-        transition: opacity .3s;
-    }
     
-    body.open .screen {
-        visibility: visible;
-        opacity: 1;
-    }
 
     .mobile-menu-button {
         display: block;
