@@ -1,34 +1,35 @@
 canvas {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* width: 800px;
     height: 500px; */
 }
 
-/* .canvas-main-container {
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(8, 1fr);
-    grid-gap: 2px;
-    height: 100vh;
-    background-color: yellow;
-} */
+.canvas-main-container {
+    /* grid-template-rows: repeat(8, 1fr); */
+    /* grid-template-columns: repeat(8, 1fr); */
+    /* grid-gap: 2px; */
+    /* height: 100vh; */
+    /* background-color: yellow; */
+    width: 100%;
+} 
 
 .canvas-main-container {
     flex-direction: column;
     align-items: center;
 }
 
-.canvas-gallery {
-    /* width: 700px; */
-}
+/* .canvas-gallery {
+    width: 700px;
+} */
 
 /* .canvas {
     grid-column: 1 / 9;
     grid-row: 2 / 7;
 } */
 
-.canvas-text input {
-    /* width: 700px; */
-}
+/* .canvas-text input {
+    width: 700px;
+} */
 
 .canvas-control-box {
     flex-direction: row;
@@ -128,6 +129,6 @@ canvas {
     width: auto;
 }
 
-.canvas-color{
+.canvas-color {
     width: 50px;
 }
