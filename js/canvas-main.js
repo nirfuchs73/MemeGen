@@ -60,8 +60,8 @@ function renderCanvas() {
 
         if (gFirstLoad) {
             if (gCanvas.width < 450) {
-                console.log('450');
-                console.log(gCanvas.width);
+                // console.log('450');
+                // console.log(gCanvas.width);
                 updateFontSize();
                 document.getElementById('text-area').style.width = gCanvas.width -20 + 'px';
                 // document.querySelector('.canvas-gallery').style.width = gCanvas.width + 'px';
