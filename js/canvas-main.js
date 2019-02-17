@@ -259,7 +259,7 @@ function onSizeChanged() {
 
 function canvasClicked(ev) {
     // console.log(gCanvas.width);
-    // var canvasClicked = true;
+    // var isCanvasClicked = true;
     var meme = getMeme();
     meme.txts.map(function (txt) {
         gCtx.font = txt.size + 'px ' + txt.font;
@@ -269,15 +269,15 @@ function canvasClicked(ev) {
             ev.offsetX < txt.x + textWidth &&
             ev.offsetY > txt.y - txtHeight &&
             ev.offsetY < txt.y) {
-            console.log(txt.line);
-            canvasClicked = false;
+            // console.log(txt.line);
+            // isCanvasClicked = false;
             // txt.color = YELLOW;
             gCurrText = txt;
             updateFields();
             renderCanvas();
         }
     });
-    // if (canvasClicked) {
+    // if (isCanvasClicked) {
     //     console.log('canvas');
     // }
 }
