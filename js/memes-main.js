@@ -6,9 +6,8 @@ function init() {
   renderGallery();
   renderFirstFillter();
   renderSecndFilter();
-  
-  // createDefualtSearchCounter()
 }
+
 
 function renderGallery() {
   var images = getImagesForDisplay();
@@ -25,7 +24,6 @@ function renderGallery() {
 function onImageClicked(id) {
   var elGallery = document.querySelector('.gallery-main');
   elGallery.classList.add('hide');
-
   var elCanvas = document.querySelector('.canvas-main-container');
   elCanvas.classList.remove('hide');
   initCanvas(id);
@@ -35,7 +33,6 @@ function renderFirstFilter() {
   var keywords = [];
   createImages();
   var allMemes = getImagesForDisplay();
-  console.log('meme', allMemes)
   var filtered = allMemes.filter(function (meme) {
     if (!keywords[meme.keywords]) {
       keywords.push[meme.keywords]
@@ -71,7 +68,7 @@ function renderFirstFillter() {
   var strHtml = keyWords.map(function (word) {
     return `<option value="${word}">${word}</option>`
   })
-  var strHtmls = `<option value = "All" > You can fillter the gallery</option>` +
+  var strHtmls = `<option value = "All" > Gallery fillter</option>` +
     strHtml.join('');
   var container = document.getElementById('key-words');
   container.innerHTML = strHtmls
@@ -79,7 +76,6 @@ function renderFirstFillter() {
 
 
 function onFilterChange(filterByKeyWord) {
-  console.log('check', filterByKeyWord)
   setMemesFilter(filterByKeyWord);
   updateSearchCounter(filterByKeyWord);
   renderGallery();
@@ -95,7 +91,6 @@ function findTopSearches(param) {
     var max = 0;
     var value;
     for (var key in arrOfSerches) {
-      // console.log('lop', key, arrOfSerches[key])
       if (+arrOfSerches[key] >= max && +arrOfSerches[key] <= maxprev && !topSerches[key]) {
         max = +arrOfSerches[key];
         value = key;
@@ -111,7 +106,6 @@ function findTopSearches(param) {
 
 function renderSecndFilter() {
   var mostlySerched = findTopSearches(3);
-  console.log(mostlySerched);
   var baseSize = 60; //base size font param that can be changed 
   var arrOfValues = Object.values(mostlySerched);
   var total = arrOfValues.reduce(function (acc, val) { return acc + val }, 0);
@@ -120,46 +114,45 @@ function renderSecndFilter() {
     var fontSize = mostlySerched[key] / total;
     return `<li class="flex align-center" value="${key}" style="font-size:${baseSize * fontSize}px" onclick="onFilterChange('${key}')">${key} </li>`
   });
-  //console.log('inner', strHtmls.join(''))
   var scndFiltContainer = document.querySelector('.scnd-filter-list');
   scndFiltContainer.innerHTML = strHtmls.join('');
 }
 
 function toggleMenu() {
   document.body.classList.toggle('open');
-  document.querySelector('.nav-list').style.display='flex';
+  document.querySelector('.nav-list').style.display = 'flex';
   document.querySelector('.contact-us').classList.remove('contact-us-open');
-  document.querySelector('.about').classList.remove('about-open'); 
-  document.querySelector('.nav-list').classList.remove('nav-list-open'); 
-}
- 
-function openForm(){
-     document.querySelector('.contact-us').classList.toggle('contact-us-open');
-     document.body.classList.toggle('open'); 
-     document.querySelector('.about').classList.remove('about-open');  
+  document.querySelector('.about').classList.remove('about-open');
+  document.querySelector('.nav-list').classList.remove('nav-list-open');
 }
 
-function openAbout(){
-    document.querySelector('.about').classList.toggle('about-open');  
-    document.body.classList.toggle('open'); 
-    document.querySelector('.contact-us').classList.remove('contact-us-open');
-
-}
- 
-function openMenu(){
-    document.querySelector('.nav-list').classList.toggle('nav-list-open');  
-    document.body.classList.toggle('open');   
+function openForm() {
+  document.querySelector('.contact-us').classList.toggle('contact-us-open');
+  document.body.classList.toggle('open');
+  document.querySelector('.about').classList.remove('about-open');
 }
 
+function openAbout() {
+  document.querySelector('.about').classList.toggle('about-open');
+  document.body.classList.toggle('open');
+  document.querySelector('.contact-us').classList.remove('contact-us-open');
 
-function onSbmitMessage(ev){
+}
+
+function openMenu() {
+  document.querySelector('.nav-list').classList.toggle('nav-list-open');
+  document.body.classList.toggle('open');
+}
+
+
+function onSbmitMessage(ev) {
   console.log('hdhdh')
   ev.preventDefault();
-  let subject=$('.subject').val();
-  let email=$('.email').val();
-  let message=$('.message').val();
-  let sendLink=`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
-  window.open (sendLink,'_blank')
+  let subject = $('.subject').val();
+  let email = $('.email').val();
+  let message = $('.message').val();
+  let sendLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
+  window.open(sendLink, '_blank')
   openForm();
 
   //reset form
