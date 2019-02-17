@@ -2,9 +2,11 @@
 
 function init() {
   createImages();
+  setMemesFilter('All');
   renderGallery();
   renderFirstFillter();
   renderSecndFilter();
+  
   // createDefualtSearchCounter()
 }
 
