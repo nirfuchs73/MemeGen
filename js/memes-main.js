@@ -168,11 +168,3 @@ function onSbmitMessage(ev){
   $('.message').val('')
 }
 
-// window.addEventListener('mouseup', function(event){
-// 	var box = document.querySelector('.contact-us-open');
-// 	if (event.target != box && event.target.parentNode != box){
-//         box.classList.remove('contact-us-open');
-//         box.classList.add('contact-us');
-//         event.stopPropagation()
-//     }
-// });
