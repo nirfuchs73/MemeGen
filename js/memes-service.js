@@ -146,8 +146,11 @@ function setMemesFilter(filterByKeyWord) {
 }
 
 function updateSearchCounter(keyWord) {
-    var count = gSerchCounter[keyWord];
-    gSerchCounter[keyWord] = (count) ? count + 1 : 1;
+    if (keyWord = 'All') { return }
+    else {
+        var count = gSerchCounter[keyWord];
+        gSerchCounter[keyWord] = (count) ? count + 1 : 1;
+    }
 }
 
 function getSerchCounter() {
