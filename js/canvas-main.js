@@ -27,7 +27,7 @@ function onBacktoGallery() {
     var elCanvas = document.querySelector('.canvas-main-container');
     elCanvas.classList.add('hide');
     init();
-   // window.location = '/';
+    // window.location = '/';
 }
 
 function renderCanvas() {
@@ -60,12 +60,18 @@ function renderCanvas() {
         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, imgWidth, imgHeight);
 
         if (gFirstLoad) {
+            if (gCanvas.width < 450) {
+                console.log('450');
+                console.log(gCanvas.width);
+                updateFontSize();
+                document.getElementById('text-area').style.width = gCanvas.width -20 + 'px';
+                // document.querySelector('.canvas-gallery').style.width = gCanvas.width + 'px';
+                document.querySelector('.canvas-main-controller').style.width = gCanvas.width -20 + 'px';
+                document.querySelector('.canvas-control-box').style.width = gCanvas.width -20 + 'px';
+                document.querySelector('.canvas-control-text').style.width = gCanvas.width -20 + 'px';
+                document.querySelector('.canvas-download').style.width = gCanvas.width -20 + 'px';
+            }
             updateMemeHeights();
-            document.getElementById('text-area').style.width = gCanvas.width + 'px';
-            document.querySelector('.canvas-gallery').style.width = gCanvas.width + 'px';
-            document.querySelector('.canvas-control-box').style.width = gCanvas.width + 'px';
-            document.querySelector('.canvas-control-text').style.width = gCanvas.width + 'px';
-            // document.querySelector('.canvas-download').style.width = gCanvas.width + 'px';
             gFirstLoad = false;
         }
 
@@ -126,6 +132,9 @@ function renderCanvas() {
 function updateMemeHeights() {
     var meme = getMeme();
     meme.txts.map(function (txt) {
+        if (txt.type === 'top') {
+            txt.y = txt.size + 20;
+        }
         if (txt.type === 'bottom') {
             txt.y = gCanvas.height - 20;
         }
@@ -133,6 +142,14 @@ function updateMemeHeights() {
             txt.y = (gCanvas.height / 2) + (txt.size / 2);
         }
     });
+}
+
+function updateFontSize() {
+    var meme = getMeme();
+    meme.txts.map(function (txt) {
+        txt.size = 30;
+    });
+    document.querySelector('.canvas-size').value = 30;
 }
 
 function onTextChanged(elText) {
@@ -283,6 +300,8 @@ function onSizeChanged() {
 }
 
 function canvasClicked(ev) {
+    console.log(gCanvas.width);
+
     var canvasClicked = true;
     var meme = getMeme();
     meme.txts.map(function (txt) {

@@ -11,11 +11,13 @@ canvas {
     /* height: 100vh; */
     /* background-color: yellow; */
     width: 100%;
-} 
+    /* align-items: center; */
+}
 
-.canvas-main-container {
-    flex-direction: column;
-    align-items: center;
+.canvas-main-controller {
+    /* max-width: 500px; */
+    width: 350px;
+    /* flex: 1; */
 }
 
 /* .canvas-gallery {
@@ -27,26 +29,29 @@ canvas {
     grid-row: 2 / 7;
 } */
 
-/* .canvas-text input {
-    width: 700px;
+/* .canvas-text {
+     width: 500px; 
 } */
 
 .canvas-control-box {
     flex-direction: row;
-    /* align-items: stretch;
-    width: 100%; */
+    /* width: 500px; */
+    /* align-items: stretch;*/
+    /* width: 100%; */
     /* background-color: green; */
 }
 
 .canvas-control-text {
     flex-direction: row;
-    /* align-items: stretch;
-    width: 100%; */
+    /* width: 500px; */
+    /* align-items: stretch;*/
+    /* width: 100%; */
     /* background-color: yellow; */
 }
 
 .canvas-download {
-    text-align: center;
+    /* text-align: center; */
+    width: 100%;
     background-color: lightgrey;
 }
 
@@ -60,75 +65,101 @@ canvas {
 
 .canvas-align-right {
     background: url('../icons/Align-right-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-align-center {
     background: url('../icons/Align-center-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-align-left {
     background: url('../icons/Align-left-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-move-up {
     background: url('../icons/Arrow-small-up-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-move-down {
     background: url('../icons/Arrow-small-down-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-move-right {
     background: url('../icons/Arrow-small-right-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
 .canvas-move-left {
     background: url('../icons/Arrow-small-left-01.png') no-repeat left center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background-size: 100%;
+    flex: 1;
 }
 
-.canvas-add-text {
-    background: url('../icons/Plus-01.png') no-repeat left center;
-    width: 40px;
-    height: 40px;
-    background-size: 100%;
-}
-
-.canvas-delete-text {
-    background: url('../icons/Remove-02.png') no-repeat left center;
-    width: 40px;
-    height: 40px;
-    background-size: 100%;
+.canvas-color {
+    /* width: 60px; */
+    flex: 1;
 }
 
 .canvas-font {
-    width: auto;
+    /* width: 90px; */
+    flex: 1;
 }
 
 .canvas-size {
     width: auto;
+    /* flex: 1; */
 }
 
-.canvas-color {
-    width: 50px;
+.canvas-add-text {
+    background: url('../icons/Playlist-add-01.png') no-repeat left center;
+    width: 60px;
+    height: 40px;
+    background-size: 100%;
+    flex: 1;
+}
+
+.canvas-delete-text {
+    background: url('../icons/Delete-01.png') no-repeat left center;
+    width: 60px;
+    height: 40px;
+    background-size: 100%;
+    flex: 1;
+}
+
+.canvas-clear {
+    /* background: url('../icons/Remove-02.png') no-repeat left center; */
+    width: 60px;
+    height: 40px;
+    background-size: 100%;
+    flex: 1;
+}
+
+@media (max-width: 450px) {
+    .canvas-main-container {
+        flex-direction: column;
+    }
 }

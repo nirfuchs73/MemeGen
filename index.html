@@ -17,11 +17,12 @@
     <div class="screen" onclick="toggleMenu()"></div>
     <header class="main-header ">
         <nav class=" main-nav wrapper flex space-between align-center">
-            <a href="#" onclick="onBacktoGallery()"class="logo flex align-center text-decoration-none  ">meme generator</a>
+            <a href="#" onclick="onBacktoGallery()" class="logo flex align-center text-decoration-none  ">meme
+                generator</a>
             <ul class="flex clean-list nav-list">
                 <li><a href="#" onclick="onBacktoGallery()">Home</a></li>
-                <li><a onClick="openAbout()"href="#">About</a></li>
-                <li><a onClick="openForm()"href="#">Contact Us</a></li>
+                <li><a onClick="openAbout()" href="#">About</a></li>
+                <li><a onClick="openForm()" href="#">Contact Us</a></li>
             </ul>
             <button id="mobile-menu-button" class="mobile-menu-button" onclick="toggleMenu()">☰</button>
         </nav>
@@ -45,7 +46,9 @@
             <button type="submit" class="btn btn-primary" onclick="onSbmitMessage(event)">Submit</button>
         </form>
     </div>
-    <div class="about">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, nam! Quibusdam eveniet voluptates sint debitis odit. Sit illo quia accusantium voluptatum vel eligendi atque velit, maiores aliquid explicabo necessitatibus veritatis!</div>
+    <div class="about">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, nam! Quibusdam eveniet
+        voluptates sint debitis odit. Sit illo quia accusantium voluptatum vel eligendi atque velit, maiores aliquid
+        explicabo necessitatibus veritatis!</div>
 
     <main class="gallery-main wrapper">
         <div class="under-navbar flex">
@@ -67,45 +70,46 @@
         </div>
     </main>
 
-    <div class="canvas-main-container flex hide">
-        <button class="canvas-gallery font-weight-bold btn btn-primary" onclick="onBacktoGallery()">Back to
-            Gallery</button>
+    <div class="canvas-main-container wrapper flex hide">
+        <!-- <button class="canvas-gallery font-weight-bold btn btn-primary" onclick="onBacktoGallery()">Back to
+            Gallery</button> -->
         <!-- <canvas id="my-canvas" width="800" height="500" onmousedown="onCanvasMouseDown(event)"> -->
-        <canvas class="canvas" id="my-canvas" width="100%" height="100%" onclick="canvasClicked(event)">
+        <canvas class="canvas" id="my-canvas" width="100%" height="80%" onclick="canvasClicked(event)">
         </canvas>
+        <div class="canvas-main-controller">
+            <input class="canvas-text form-control" type="text" id="text-area" name="fname" placeholder="Type text here"
+                onkeyup="onTextChanged(this)">
 
-        <input class="canvas-text form-control" type="text" id="text-area" name="fname" placeholder="Type text here"
-            onkeyup="onTextChanged(this)">
-
-        <div class="canvas-control-box flex">
-            <input class="canvas-color align-self-center form-control btn-sm" type="color" id="color" name="color"
-                form="frmRegister" onchange="colorChanged()" />
-            <select class="canvas-font custom-select btn-sm" onchange="onFontChanged()">
-                <option value="Impact" selected="selected">Impact</option>
-                <option value="Ariel">Ariel</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Comic Sans MS">Comic Sans MS</option>
-                <option value="Trebuchet MS">Trebuchet MS</option>
-            </select>
-            <select class="canvas-size custom-select btn-sm" onchange="onSizeChanged()">
-                <option value="30">30</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-                <option value="60" selected="selected">60</option>
-            </select>
-            <button class="canvas-add-text btn btn-light btn-sm" onclick="onAddText()"></button>
-            <button class="canvas-delete-text btn btn-light btn-sm" onclick="onDeleteText()"></button>
-            <button class="canvas-clear font-weight-bold btn btn-light btn-sm" onclick="onClear()">Clear</button>
-        </div>
-        <div class="canvas-control-text flex">
-            <button class="canvas-move-up btn btn-light btn-sm" onclick="onMoveUp()"></button>
-            <button class="canvas-move-down btn btn-light btn-sm" onclick="onMoveDown()"></button>
-            <button class="canvas-move-left btn btn-light btn-sm" onclick="onMoveLeft()"></button>
-            <button class="canvas-move-right btn btn-light btn-sm" onclick="onMoveRight()"></button>
-            <button class="canvas-align-left btn btn-light btn-sm" onclick="onAlignLeft()"></button>
-            <button class="canvas-align-center btn btn-light btn-sm" onclick="onAlignCenter()"></button>
-            <button class="canvas-align-right btn btn-light btn-sm" onclick="onAlignRight()"></button>
+            <div class="canvas-control-box flex">
+                <input class="canvas-color align-self-center form-control btn-sm" type="color" id="color" name="color"
+                    form="frmRegister" onchange="colorChanged()" />
+                <select class="canvas-font custom-select btn-sm" onchange="onFontChanged()">
+                    <option value="Impact" selected="selected">Impact</option>
+                    <option value="Ariel">Ariel</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                </select>
+                <select class="canvas-size custom-select btn-sm" onchange="onSizeChanged()">
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60" selected="selected">60</option>
+                </select>
+                <button class="canvas-add-text btn btn-light btn-sm" onclick="onAddText()"></button>
+                <button class="canvas-delete-text btn btn-light btn-sm" onclick="onDeleteText()"></button>
+                <button class="canvas-clear font-weight-bold btn btn-light btn-sm" onclick="onClear()">Clear</button>
+            </div>
+            <div class="canvas-control-text flex">
+                <button class="canvas-move-up btn btn-light btn-sm" onclick="onMoveUp()"></button>
+                <button class="canvas-move-down btn btn-light btn-sm" onclick="onMoveDown()"></button>
+                <button class="canvas-move-left btn btn-light btn-sm" onclick="onMoveLeft()"></button>
+                <button class="canvas-move-right btn btn-light btn-sm" onclick="onMoveRight()"></button>
+                <button class="canvas-align-left btn btn-light btn-sm" onclick="onAlignLeft()"></button>
+                <button class="canvas-align-center btn btn-light btn-sm" onclick="onAlignCenter()"></button>
+                <button class="canvas-align-right btn btn-light btn-sm" onclick="onAlignRight()"></button>
+            </div>
             <a class="canvas-download font-weight-bold btn btn-link btn-sm" href="" type=" button"
                 onclick="downloadCanvas(this)">Download</a>
         </div>
