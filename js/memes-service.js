@@ -7,6 +7,7 @@ var WHITE = '#FFFFFF';
 var YELLOW = '#FFFF00';
 var BLACK = '#000000'
 var gMemesFilterBy = 'All';
+const SEARCHES_KEY= 'countSearches';
 var gSerchCounter = { 'happy': 3, 'dogs': 2, 'cats': 1 };
 
 function createMeme(selectedImgId) {
@@ -150,9 +151,14 @@ function updateSearchCounter(keyWord) {
     else {
         var count = gSerchCounter[keyWord];
         gSerchCounter[keyWord] = (count) ? count + 1 : 1;
+         saveToStorage(SEARCHES_KEY, gSerchCounter)
     }
 }
 
 function getSerchCounter() {
-    return gSerchCounter;
+    var counter= loadFromStorage(SEARCHES_KEY);
+    if (!counter || counter.length === 0) {
+        counter = gSerchCounter;
+    }
+  return counter;
 }
