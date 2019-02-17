@@ -80,6 +80,16 @@ function renderCanvas() {
             // txt.x = gCanvas.width / 2 - gCtx.measureText(txt.line).width / 2;
             gCtx.strokeText(txt.line, txt.x, txt.y);
             gCtx.fillText(txt.line, txt.x, txt.y);
+
+            //////////
+            // gCtx.beginPath();
+            // gCtx.moveTo(txt.x, txt.y);
+            // gCtx.lineTo(txt.x + gCtx.measureText(txt.line).width, txt.y);
+            // gCtx.strokeStyle = YELLOW;
+            // gCtx.closePath();
+            // gCtx.stroke();
+            //////////
+
             // var lines = getLines(txt.line, gCanvas.width);
             // console.log(lines);
             // for (var i = 0; i < lines.length; i++) {
@@ -186,7 +196,7 @@ function moveText(eventKeyboard) {
 }
 
 function onMoveUp() {
-    if (gCurrText.y < gCurrText.size -5) return;
+    if (gCurrText.y < gCurrText.size - 5) return;
     gCurrText.y -= 5;
     renderCanvas();
 }
@@ -272,8 +282,10 @@ function canvasClicked(ev) {
         var txtHeight = txt.size;
         if (ev.offsetX > txt.x &&
             ev.offsetX < txt.x + textWidth &&
-            ev.offsetY > txt.y - txtHeight / 2 &&
-            ev.offsetY < txt.y + txtHeight / 2) {
+            ev.offsetY > txt.y - txtHeight &&
+            ev.offsetY < txt.y + txtHeight) {
+            // ev.offsetY > txt.y - txtHeight / 2 &&
+            // ev.offsetY < txt.y + txtHeight / 2) {
             // console.log(txt.line);
             // txt.color = YELLOW;
             gCurrText = txt;
