@@ -128,16 +128,28 @@ function renderSecndFilter() {
 function toggleMenu() {
   document.body.classList.toggle('open');
   document.querySelector('.nav-list').style.display='flex';
+  document.querySelector('.contact-us').classList.remove('contact-us-open');
+  document.querySelector('.about').classList.remove('about-open'); 
+  document.querySelector('.nav-list').classList.remove('nav-list-open'); 
 }
  
 function openForm(){
-    document.querySelector('.contact-us').classList.toggle('contact-us-open');    
+     document.querySelector('.contact-us').classList.toggle('contact-us-open');
+     document.body.classList.toggle('open'); 
+     document.querySelector('.about').classList.remove('about-open');  
 }
 
 function openAbout(){
-    document.querySelector('.about').classList.toggle('about-open');    
-}
+    document.querySelector('.about').classList.toggle('about-open');  
+    document.body.classList.toggle('open'); 
+    document.querySelector('.contact-us').classList.remove('contact-us-open');
 
+}
+ 
+function openMenu(){
+    document.querySelector('.nav-list').classList.toggle('nav-list-open');  
+    document.body.classList.toggle('open');   
+}
 
 
 function onSbmitMessage(ev){
@@ -146,7 +158,7 @@ function onSbmitMessage(ev){
   let subject=$('.subject').val();
   let email=$('.email').val();
   let message=$('.message').val();
-  let sendLink=`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&b ody=${message}`
+  let sendLink=`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${message}`
   window.open (sendLink,'_blank')
   openForm();
 
