@@ -78,7 +78,7 @@ function createImages() {
             createImage('meme-imgs/leo.jpg', ['happy']),
             createImage('meme-imgs/img12.jpg', ['happy']),
             createImage('meme-imgs/img11.jpg', ['happy']),
-            createImage('meme-imgs/img6.jpg', ['funny']),
+            createImage('meme-imgs/img6.jpg', ['funny','dogs']),
             createImage('meme-imgs/img5.jpg', ['happy']),
             createImage('meme-imgs/img4.jpg', ['happy', 'funny']),
             createImage('meme-imgs/img2.jpg', ['happy']),
@@ -90,9 +90,9 @@ function createImages() {
             createImage('meme-imgs/8.jpg', ['happy']),
             createImage('meme-imgs/Ancient-Aliens.jpg', ['happy']),
             createImage('meme-imgs/One-Does-Not-Simply.jpg', ['happy']),
-            createImage('meme-imgs/X-Everywhere.jpg', ['happy']),
+            createImage('meme-imgs/X-Everywhere.jpg', ['happy','cartoons']),
             createImage('meme-imgs/5.jpg', ['happy']),
-            createImage('meme-imgs/2.jpg', ['happy']),
+            createImage('meme-imgs/2.jpg', ['happy','cartoons']),
         ];
     } else {
         gNextId = findNextId(images);
@@ -146,7 +146,7 @@ function setMemesFilter(filterByKeyWord) {
 }
 
 function updateSearchCounter(keyWord) {
-    if (keyWord = 'All') { return }
+    if (keyWord === 'All') { return }
     else {
         var count = gSerchCounter[keyWord];
         gSerchCounter[keyWord] = (count) ? count + 1 : 1;
