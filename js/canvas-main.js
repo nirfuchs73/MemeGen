@@ -27,7 +27,8 @@ function onBacktoGallery() {
     var elCanvas = document.querySelector('.canvas-main-container');
     elCanvas.classList.add('hide');
     // init();
-    window.location = '/';
+    // window.location = '/';
+    window.location.href = '/';
 }
 
 function renderCanvas() {
