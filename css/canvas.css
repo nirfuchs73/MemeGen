@@ -30,9 +30,11 @@ canvas {
     grid-row: 2 / 7;
 } */
 
-/* .canvas-text {
-     width: 500px; 
-} */
+.canvas-text {
+     /* width: 500px;  */
+     margin: 3px;
+     flex:1;
+}
 
 .canvas-control-box {
     flex-direction: row;
@@ -52,8 +54,10 @@ canvas {
 
 .canvas-download {
     /* text-align: center; */
-    width: 100%;
+    /* width: 100%; */
     background-color: lightgrey;
+    margin: 3px;
+    flex: 1;
 }
 
 .canvas-download {
@@ -66,6 +70,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-align-center {
@@ -74,6 +79,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-align-left {
@@ -82,6 +88,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-move-up {
@@ -90,6 +97,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-move-down {
@@ -98,6 +106,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-move-right {
@@ -106,6 +115,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-move-left {
@@ -114,21 +124,25 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-color {
     /* width: 60px; */
-    flex: 1;
+    flex: 2;
+    margin: 3px;
 }
 
 .canvas-font {
     /* width: 90px; */
-    flex: 1;
+    flex: 2;
+    margin: 3px;
 }
 
 .canvas-size {
     width: auto;
-    /* flex: 1; */
+    flex: 1;
+    margin: 3px;
 }
 
 .canvas-add-text {
@@ -137,6 +151,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-delete-text {
@@ -145,6 +160,7 @@ canvas {
     height: 40px;
     background-size: 100%;
     flex: 1;
+    margin: 3px;
 }
 
 .canvas-wrapper {

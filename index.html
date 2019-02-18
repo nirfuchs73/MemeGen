@@ -77,9 +77,10 @@
         <canvas class="canvas" id="my-canvas" width="100%" height="80%" onclick="canvasClicked(event)">
         </canvas>
         <div class="canvas-main-controller">
-            <input class="canvas-text form-control" type="text" id="text-area" name="fname" placeholder="Type text here"
-                onkeyup="onTextChanged(this)">
-
+            <div class="text-area flex">
+                <input class="canvas-text form-control" type="text" id="text-area" name="fname"
+                    placeholder="Type text here" onkeyup="onTextChanged(this)">
+            </div>
             <div class="canvas-control-box flex">
                 <input class="canvas-color align-self-center form-control btn-sm" type="color" id="color" name="color"
                     form="frmRegister" onchange="colorChanged()" />
@@ -110,8 +111,10 @@
                 <button class="canvas-align-center btn btn-light btn-sm" onclick="onAlignCenter()"></button>
                 <button class="canvas-align-right btn btn-light btn-sm" onclick="onAlignRight()"></button>
             </div>
-            <a class="canvas-download font-weight-bold btn btn-link btn-sm" href="" type=" button"
-                onclick="downloadCanvas(this)">Download</a>
+            <div class="download flex">
+                <a class="canvas-download font-weight-bold btn btn-link btn-sm" href="" type=" button"
+                    onclick="downloadCanvas(this)">Download</a>
+            </div>
         </div>
     </div>
     </div>
